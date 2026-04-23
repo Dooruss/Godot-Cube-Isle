@@ -46,6 +46,9 @@ func _on_multi_button_pressed() -> void:
 		Coins -= (25 * MultiLevel)
 		MultiLevel += 1
 		ClickAmount = MultiLevel * MultiLevel
+		var FormatString = "More per Click!: $%s"
+		var ActualString = FormatString % str(25 * MultiLevel)
+		multi_button.text = ActualString
 		
 
 
@@ -53,3 +56,6 @@ func _on_auto_amount_button_pressed() -> void:
 	if Coins >= 100:
 		AddCoins(-100)
 		AutoAmount += 2
+		var FormatString = "More per second!: $%s"
+		var ActualString = FormatString % str(100)
+		auto_amount_button.text = ActualString

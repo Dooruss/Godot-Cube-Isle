@@ -13,10 +13,10 @@ offset_bottom = 40.0
 
 [node name="ClickButton" type="Button" parent="UpperController" unique_id=1217135238]
 layout_mode = 0
-offset_left = 515.0
-offset_top = 459.00003
-offset_right = 560.0
-offset_bottom = 490.00003
+offset_left = 482.0
+offset_top = 173.0
+offset_right = 527.0
+offset_bottom = 204.0
 scale = Vector2(3.1052604, 2.0526292)
 text = "Click"
 
@@ -27,7 +27,7 @@ offset_top = 428.0
 offset_right = 62.0
 offset_bottom = 459.0
 scale = Vector2(3.1052604, 2.0526292)
-text = "Multi"
+text = "More Per Click! $ 25"
 
 [node name="AutoButton" type="Button" parent="UpperController" unique_id=251438425]
 layout_mode = 0
@@ -36,7 +36,7 @@ offset_top = 500.00003
 offset_right = 58.0
 offset_bottom = 531.0
 scale = Vector2(3.1052604, 2.0526292)
-text = "Auto"
+text = "Automate!: 100 Coins (One time)"
 
 [node name="AutoTIme" type="Timer" parent="UpperController/AutoButton" unique_id=889198105]
 
@@ -47,14 +47,14 @@ offset_top = 576.00006
 offset_right = 117.0
 offset_bottom = 607.00006
 scale = Vector2(3.1052604, 2.0526292)
-text = "AutoAmount"
+text = "More per second!: 100"
 
 [node name="CoinAmountLabel" type="RichTextLabel" parent="UpperController" unique_id=758832607]
 layout_mode = 0
-offset_left = 24.000004
-offset_top = 26.0
-offset_right = 103.0
-offset_bottom = 66.0
+offset_left = 483.0
+offset_top = 111.999985
+offset_right = 562.0
+offset_bottom = 151.99998
 scale = Vector2(1.8000002, 1.3999995)
 text = "Coins: 500"
 fit_content = true
