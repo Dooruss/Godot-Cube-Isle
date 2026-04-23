@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bf7fr8v83yujg"]
+
+[ext_resource type="Script" uid="uid://cy7nxld81s8co" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=1044969766]
+script = ExtResource("1_ig7tw")
+
+[node name="UpperController" type="Control" parent="." unique_id=2041311909]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClickButton" type="Button" parent="UpperController" unique_id=1217135238]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 459.00003
+offset_right = 560.0
+offset_bottom = 490.00003
+scale = Vector2(3.1052604, 2.0526292)
+text = "Click"
+
+[node name="MultiButton" type="Button" parent="UpperController" unique_id=722502366]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 428.0
+offset_right = 62.0
+offset_bottom = 459.0
+scale = Vector2(3.1052604, 2.0526292)
+text = "Multi"
+
+[node name="AutoButton" type="Button" parent="UpperController" unique_id=251438425]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 500.00003
+offset_right = 58.0
+offset_bottom = 531.0
+scale = Vector2(3.1052604, 2.0526292)
+text = "Auto"
+
+[node name="AutoTIme" type="Timer" parent="UpperController/AutoButton" unique_id=889198105]
+
+[node name="AutoAmountButton" type="Button" parent="UpperController" unique_id=1681340879]
+layout_mode = 0
+offset_left = 8.999999
+offset_top = 576.00006
+offset_right = 117.0
+offset_bottom = 607.00006
+scale = Vector2(3.1052604, 2.0526292)
+text = "AutoAmount"
+
+[node name="CoinAmountLabel" type="RichTextLabel" parent="UpperController" unique_id=758832607]
+layout_mode = 0
+offset_left = 24.000004
+offset_top = 26.0
+offset_right = 103.0
+offset_bottom = 66.0
+scale = Vector2(1.8000002, 1.3999995)
+text = "Coins: 500"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="pressed" from="UpperController/ClickButton" to="." method="_on_click_button_pressed"]
+[connection signal="pressed" from="UpperController/MultiButton" to="." method="_on_multi_button_pressed"]
+[connection signal="pressed" from="UpperController/AutoButton" to="." method="_on_auto_button_pressed"]
+[connection signal="timeout" from="UpperController/AutoButton/AutoTIme" to="." method="_on_auto_t_ime_timeout"]
+[connection signal="pressed" from="UpperController/AutoAmountButton" to="." method="_on_auto_amount_button_pressed"]
