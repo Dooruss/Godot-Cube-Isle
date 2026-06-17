@@ -27,7 +27,7 @@ offset_top = 428.0
 offset_right = 62.0
 offset_bottom = 459.0
 scale = Vector2(3.1052604, 2.0526292)
-text = "More Per Click! $ 25"
+text = "More per Click!: $25"
 
 [node name="AutoButton" type="Button" parent="UpperController" unique_id=251438425]
 layout_mode = 0
