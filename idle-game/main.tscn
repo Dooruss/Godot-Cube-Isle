@@ -22,16 +22,10 @@ autowrap_mode = 3
 
 [node name="InfoLabel" type="Label" parent="UI" unique_id=2139689978]
 offset_left = 4.0
-offset_top = 48.0
-offset_right = 126.0
-offset_bottom = 66.0
-text = "Cubes: 0"
-
-[node name="HSeparator" type="HSeparator" parent="UI" unique_id=1516029505]
-offset_left = 4.0
-offset_top = 72.0
+offset_top = 57.0
 offset_right = 126.0
 offset_bottom = 80.0
+text = "Cubes: 0"
 
 [node name="EarnButton" type="Button" parent="UI" unique_id=743382416]
 offset_left = 4.0
