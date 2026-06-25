@@ -1,19 +1,16 @@
 extends Area2D
 
-# Area2D = GameObject with a trigger Collider2D
-# Signals bubble up to Main.gd same as UnityEvents
-
 signal cube_clicked(amount: int)
 signal passive_tick(amount: int)
 
-# @onready = GetComponent / Find in Start()
-@onready var passive_timer: Timer = $PassiveTimer
-@onready var click_label:   Label = $ClickLabel
+# @onready = GetComponent in Start()
+@onready var color_rect:    ColorRect = $ColorRect
+@onready var passive_timer: Timer     = $PassiveTimer
+@onready var click_label:   Label     = $ClickLabel
 
 var click_value:   int = 1
 var passive_value: int = 1
-
-var _tween: Tween  # like a DOTween sequence reused each click
+var _tween: Tween
 
 
 func _ready() -> void:
@@ -23,17 +20,24 @@ func _ready() -> void:
 	click_label.visible = false
 
 
+# Called right after instantiate() — like setting up a prefab before adding to the scene
+func setup(col: Color, click_val: int, passive_val: int) -> void:
+	color_rect.color = col
+	click_value      = click_val
+	passive_value    = passive_val
+
+
 func on_clicked() -> void:
 	emit_signal("cube_clicked", click_value)
 	_wiggle()
 	_show_click_label(click_value)
 
 
-# Does every second
+# Fires every second — same as InvokeRepeating
 func _on_passive_timer_timeout() -> void:
 	emit_signal("passive_tick", passive_value)
 
-# Lowkey forgot
+
 func _wiggle() -> void:
 	if _tween:
 		_tween.kill()
@@ -58,7 +62,6 @@ func _show_click_label(amount: int) -> void:
 	click_label.visible    = false
 
 
-# Called by the main script after an upgrade purchase
 func apply_upgrades(new_click_val: int, new_passive_val: int) -> void:
 	click_value   = new_click_val
 	passive_value = new_passive_val
